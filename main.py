@@ -1,16 +1,17 @@
-# This is a sample Python script.
+import test_module
 
-# Press ⌃R to execute it or replace it with your code.
-# Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press ⌘F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    print_hi('PyCharm')
+    print("Running unit tests...")
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    exec("test_module")
+
+    testing = test_module.MyTestCase()
+
+    testing.test_get_area()
+    testing.test_get_perimeter()
+    testing.test_get_diagonal()
+    testing.test__repr__()
+    testing.test_get_picture()
+    testing.test_get_amount_inside()
+
+    print("Done.")

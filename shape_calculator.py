@@ -32,8 +32,15 @@ class Rectangle:
     def get_picture(self):
         """
         Returns a string that represents the shape using lines of "*".
+
+        The number of lines should be equal to the height and the number of "*" in each line
+        should be equal to the width. There should be a new line at the end of each line.
+        If the width or height is larger than 50, this should return the string: "Too big for picture.".
         """
-        pass
+        if self.width > 50 or self.height > 50:
+            return "Too big for picture."
+        else:
+            return (self.width * "*" + "\n") * self.height
 
     def get_amount_inside(self, shape: 'Rectangle'):
         """
@@ -44,7 +51,8 @@ class Rectangle:
         if shape.width > self.width or shape.height > self.height:
             return False
         else:
-            pass
+            # Logic: how many times we can place the shape horizontally * how many times we can place it vertically.
+            return (self.width // shape.width) * (self.height // shape.height)
 
 
 class Square(Rectangle):

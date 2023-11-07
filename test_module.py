@@ -57,7 +57,8 @@ class MyTestCase(unittest.TestCase):
 ********************
 ********************
 ********************
-********************"""
+********************
+"""
         self.assertEqual(expected_picture, rect.get_picture())
 
         # Square
@@ -66,8 +67,9 @@ class MyTestCase(unittest.TestCase):
 *****
 *****
 *****
-*****"""
-        self.assertEqual(expected_picture, str(sq))
+*****
+"""
+        self.assertEqual(expected_picture, sq.get_picture())
 
         # When width or height is larger than 50
         rect = shape_calculator.Rectangle(52, 45)
